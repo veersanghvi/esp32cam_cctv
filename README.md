@@ -1,7 +1,15 @@
 
-# ESP32-CAM_MJPEG2SD
+# Prahaar: Scalable, Affordable Surveillance for All
 
-Application for ESP32 / ESP32S3 with OV2640 / OV5640 camera to record JPEGs to SD card as AVI files and playback to browser as an MJPEG stream. The AVI format allows recordings to replay at correct frame rate on media players. If a microphone is installed then a WAV file is also created and stored in the AVI file.  
+Prahaar is an innovative, open-source CCTV surveillance solution designed specifically for rural and low-income areas in India. It leverages the ESP32/ESP32S3 with an OV2640/OV5640 camera to provide affordable, resilient, and secure monitoring. Prahaar focuses on ultra-low-power operation through a PIR sensor trigger and robust offline-first local storage as AVI files, ensuring continuous evidence capture even without constant internet or power. It's built for easy deployment and widespread scalability.
+### Why Prahaar Stands Out (Our Differentiators)
+**Ultra-Low Power Design**: Emphasize the PIR sensor's role in waking the camera, leading to weeks of battery life.
+**Off-Grid Autonomy**: Solar panel and battery integration for self-sustaining operation.
+**Offline-First Reliability**: Guaranteed local recording on SD card, crucial for areas with limited internet.
+**Cost-Effectiveness**: Mention the target unit cost (~₹2,500) and how component choice enables this.
+**Simplicity & Local Feasibility**: Easy setup and reliance on readily available, locally sourced components for "Make in India" spirit.
+**Security by Design**: Mention firmware integrity and secure data handling.
+
 The application supports:
 * [Motion detection by camera](#motion-detection-by-camera) or PIR / radar sensor
 * Time lapse recording
@@ -24,9 +32,6 @@ The application supports:
 * [Intercom](#intercom) feature using mic and speaker on ESP and mic and speaker on user device browser.
 
 The ESP32 cannot support all of the features as it will run out of heap space. For better functionality and performance, use one of the new ESP32S3 camera boards, eg Freenove ESP32S3 Cam, ESP32S3 XIAO Sense, but avoid no-name boards marked `ESPS3 RE:1.0`
-
-***This is a complex app and some users are raising issues when the app reports a warning, but this is the app notifying the user that there is an problem with their setup, which only the user can fix. Be aware that some clone boards have different specs to the original, eg PSRAM size. Please only raise issues for actual bugs (ERR messages, unhandled library error or crash). Thanks.  
-To suggest an improvement or enhancement use Discussions.*** 
 
 Changes up to version 10.6:
 * Stream to [NVR](#stream-to-nvr) using integration to RTSPServer library contributed by [@rjsachse](https://github.com/rjsachse). 
@@ -101,7 +106,7 @@ Browser functions only fully tested on Chrome.
 
 ## Main Function
 
-A recording is generated either by the camera itself detecting motion, or by holding a given pin high (kept low by internal pulldown when released), eg by using an active high motion sensor such as PIR or RCWL-0516 microwave radar.
+Prahaar primarily uses a highly efficient PIR (Passive Infrared) sensor to detect motion, intelligently waking the camera only when activity is confirmed. This ensures minimal power consumption.
 In addition a recording can be requested manually using the **Start Recording** button on the web page.
 
 To play back a recording, select the file using **Playback & File Transfers** sidebar button to select the day folder then the required AVI file.
