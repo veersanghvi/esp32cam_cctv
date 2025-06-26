@@ -1,6 +1,3 @@
-// Global MJPEG2SD declarations
-//
-// s60sc 2021, 2022, 2024
 
 #pragma once
 #include "globals.h"
@@ -57,17 +54,17 @@
   Optional features NOT included by default to reduce heap use 
   To include a particular feature, change false to true
 ***************************************************************/
-#define INCLUDE_FTP_HFS false // ftp.cpp (file upload)
+#define INCLUDE_FTP_HFS true // ftp.cpp (file upload)
 #define INCLUDE_TGRAM false   // telegram.cpp (Telegram app interface)
-#define INCLUDE_AUDIO false   // audio.cpp (microphones & speakers)
-#define INCLUDE_PERIPH false  // peripherals.cpp (servos, PIR, led etc)
-#define INCLUDE_SMTP false    // smtp.cpp (email)
+#define INCLUDE_AUDIO true   // audio.cpp (microphones & speakers)
+#define INCLUDE_PERIPH true  // peripherals.cpp (servos, PIR, led etc)
+#define INCLUDE_SMTP true    // smtp.cpp (email)
 #define INCLUDE_MQTT false    // mqtt.cpp (MQTT)
 #define INCLUDE_HASIO false   // mqtt.cpp (Send home assistant discovery messages). Needs INCLUDE_MQTT true
 
-#define INCLUDE_CERTS false   // certificates.cpp (https and server certificate checking)
+#define INCLUDE_CERTS true   // certificates.cpp (https and server certificate checking)
 #define INCLUDE_UART false    // uart.cpp (use another esp32 as Auxiliary connected via UART)
-#define INCLUDE_TELEM false   // telemetry.cpp (real time data collection). Needs INCLUDE_I2C true
+#define INCLUDE_TELEM true   // telemetry.cpp (real time data collection). Needs INCLUDE_I2C true
 #define INCLUDE_WEBDAV false  // webDav.cpp (WebDAV protocol)
 #define INCLUDE_EXTHB false   // externalHeartbeat.cpp (heartbeat to remote server)
 #define INCLUDE_PGRAM false   // photogram.cpp (photogrammetry feature). Needs INCLUDE_PERIPH true
@@ -130,7 +127,7 @@
 #define INDEX_PAGE_PATH DATA_DIR "/SideAl" HTML_EXT
 #define NO_SD
 #else
-#define APP_NAME "ESP-CAM_MJPEG" // max 15 chars
+#define APP_NAME "PRAHAAR_CAM" // max 15 chars
 #define INDEX_PAGE_PATH DATA_DIR "/MJPEG2SD" HTML_EXT
 #endif
 
